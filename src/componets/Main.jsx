@@ -164,8 +164,6 @@ function Main() {
                 mx="auto"
                 my="4"
                 _hover={{
-                  background: "green.50",
-                  color: "teal.500",
                   boxShadow: "outline",
                 }}
                 borderRadius="lg"
@@ -188,8 +186,8 @@ function Main() {
                   <p>Type: {location.type}</p>
                   <p>CancelPolicy: {location.cancelPolicy}</p>
                   <p>
-                    Amenities: {location?.previewAmenities?.[0]},
-                    {location?.previewAmenities?.[1]},
+                    Amenities: {location?.previewAmenities?.[0]}
+                    {location?.previewAmenities?.[1]}
                     {location?.previewAmenities?.[2]}
                   </p>
                   <p>
