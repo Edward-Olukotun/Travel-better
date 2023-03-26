@@ -4,6 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 import { useQuery } from "react-query";
 import axios from "axios";
 import Toggle from "./Toggle";
+import { ColorRing } from "react-loader-spinner";
 import {
   Box,
   Stack,
@@ -61,7 +62,21 @@ function Main() {
   );
 
   if (isLoading) {
-    return <h1>Loading....</h1>;
+    return (
+      <Box mt="15%">
+        <Flex justify="center">
+          <ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="blocks-wrapper"
+            colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+          />
+        </Flex>
+      </Box>
+    );
   }
   if (isFetching) {
     return <h1>....Fetching.....</h1>;
@@ -164,6 +179,7 @@ function Main() {
                 mx="auto"
                 my="4"
                 _hover={{
+                  color: "teal.500",
                   boxShadow: "outline",
                 }}
                 borderRadius="lg"
